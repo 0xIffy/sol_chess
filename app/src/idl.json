@@ -1,0 +1,138 @@
+{
+  "version": "0.0.0",
+  "name": "chaoss",
+  "instructions": [
+    {
+      "name": "initialize",
+      "accounts": [
+        {
+          "name": "baseAccount",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "user",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "makeMove",
+      "accounts": [
+        {
+          "name": "baseAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "user",
+          "isMut": true,
+          "isSigner": true
+        }
+      ],
+      "args": [
+        {
+          "name": "mv",
+          "type": "string"
+        },
+        {
+          "name": "fen",
+          "type": "string"
+        },
+        {
+          "name": "prevFen",
+          "type": "string"
+        },
+        {
+          "name": "over",
+          "type": "bool"
+        }
+      ]
+    }
+  ],
+  "accounts": [
+    {
+      "name": "BaseAccount",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "games",
+            "type": {
+              "vec": {
+                "defined": "GameStruct"
+              }
+            }
+          },
+          {
+            "name": "totalGames",
+            "type": "u128"
+          }
+        ]
+      }
+    }
+  ],
+  "types": [
+    {
+      "name": "MoveStruct",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "player",
+            "type": "publicKey"
+          },
+          {
+            "name": "san",
+            "type": "string"
+          },
+          {
+            "name": "boardPos",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    {
+      "name": "GameStruct",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "currBoard",
+            "type": "string"
+          },
+          {
+            "name": "numMoves",
+            "type": "u128"
+          },
+          {
+            "name": "moves",
+            "type": {
+              "vec": {
+                "defined": "MoveStruct"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "errors": [
+    {
+      "code": 300,
+      "name": "BadFen",
+      "msg": "Previous board state does not match current state."
+    }
+  ],
+  "metadata": {
+    "address": "EBZ8p9zxdfFS5dJ1NBVGi1MWqwhVA5wKwA6kPQEGq1Js"
+  }
+}

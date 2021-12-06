@@ -1,0 +1,12 @@
+[programs.devnet]
+chaoss = "EBZ8p9zxdfFS5dJ1NBVGi1MWqwhVA5wKwA6kPQEGq1Js"
+
+[registry]
+url = "https://anchor.projectserum.com"
+
+[provider]
+cluster = "devnet"
+wallet = "/home/braeden/.config/solana/id.json"
+
+[scripts]
+test = "mocha -t 1000000 tests/"
