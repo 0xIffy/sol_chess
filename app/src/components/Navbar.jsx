@@ -6,7 +6,7 @@ const TWITTER_HANDLE = '0xIffy';
 const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
 
 const GITHUB_HANDLE = '0xIffy';
-const GITHUB_LINK = `https://github.com/${GITHUB_HANDLE}`;
+const GITHUB_LINK = `https://github.com/${GITHUB_HANDLE}/sol_chess`;
 
 
 class Navbar extends React.Component {
