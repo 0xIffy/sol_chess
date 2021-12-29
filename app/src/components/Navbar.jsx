@@ -2,10 +2,10 @@ import React from 'react';
 import twitterLogo from '../assets/twitter-logo.svg';
 import githubLogo from '../assets/github-logo.svg';
 
-const TWITTER_HANDLE = '0xIffy';
+const TWITTER_HANDLE = 'nibbus0x';
 const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
 
-const GITHUB_HANDLE = '0xIffy';
+const GITHUB_HANDLE = 'nibbus0x';
 const GITHUB_LINK = `https://github.com/${GITHUB_HANDLE}/sol_chess`;
 
 
